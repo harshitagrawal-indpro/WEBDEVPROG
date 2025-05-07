@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter your name">
+    <p id="hello" style="font-size: 20px;">Hello</p>
+    <select id="okay">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+
+
+    </select>
+
+
+
+    <script>
+        let waititme=500;
+        document.addEventListener("DOMContentLoaded", function () {
+            let hello = document.getElementById("hello");
+            let input = document.getElementById("input");
+            let okay = document.getElementById("okay");
+            okay.addEventListener("change",(eve)=>{
+                // console.log(eve.target.value);
+                waititme= 500 + eve.target.value * 1000;
+            })
+            input.addEventListener("keydown",(eve)=>{
+                if (eve.key==="Enter"){
+                    hello.innerText=input.value;
+                }
+            })
+
+            let grow = setInterval(function () {
+                let currentSize = parseFloat(window.getComputedStyle(hello).fontSize);
+                hello.style.fontSize = (currentSize * 1.1) + "px";
+                hello.style.color = "red";
+                if (currentSize > 50) {
+                    clearInterval(grow);
+                    let shrink= setInterval(function () {
+                        let currentSize = parseFloat(window.getComputedStyle(hello).fontSize);
+                        hello.style.fontSize = (currentSize * 0.9) + "px";
+                        hello.style.color = "blue";
+                        if (currentSize < 10) {
+                            clearInterval(shrink);
+                            grow();
+                        }
+                    },waititme);
+                }
+            }, waititme);
+        });
+
+
+    </script>
+</body>
+</html>

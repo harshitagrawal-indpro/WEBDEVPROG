@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="maindiv">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1> Currency Converter</h1>
+                    <label for="input1">Enter Amount</label>
+                    <input type="number" id="input1" placeholder="Enter Amount">
+                    <select name="currency" id="currency">
+                        <option value="USD">USD</option>
+                        <option value="INR">INR</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="RUB">RUB</option>
+                    </select>
+
+                    <label for="tocurrency" >To</label>
+                    <select name="tocurrency" id="tocurrency">
+                        <option value="USD">USD</option>
+                        <option value="INR">INR</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                        <option value="RUB">RUB</option>
+                    </select>
+                    <button id="convert" onclick="convert()">Convert</button>
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script >
+        const rates = {
+            USD: 1,
+            INR: 80,
+            EUR: 0.9,
+            GBP: 0.8,
+            RUB: 65,
+        };
+        function convert() {
+            const input1 = document.getElementById("input1").value;
+            const currency = document.getElementById("currency").value;
+            const tocurrency = document.getElementById("tocurrency").value;
+            const result = input1 * rates[tocurrency] / rates[currency];
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sc(){
+        rng=prompt ("ENter the range:");
+        res = rng.split("-");
+        if (res.length !=2){
+            alert ("Invalid Range");
+            return ;
+
+        }
+        first=parseInt(res[0]);
+        second=parseInt(res[1]);
+if (first>second){
+    alert ("Invalid Range");
+    return ;
+}
+str="<table border=2><tr><th>Number</th><th>Square</th><th>Cube</th></tr>";
+for (i=first;i<=second;i++){
+    str+="<tr><td>"+i+"</td><td>"+i*i+"</td><td>"+i*i*i+"</td></tr>";
+}
+document.write(str);}
+    </script>
+</head>
+
+<body>
+    <h1>Lab 5</h1>
+    <h2>Table of Squares and Cubes</h2>
+    <p>Enter a range of numbers separated by a hyphen (e.g. 1-10) to generate a table of squares and cubes for that range.</p>
+    <p>Example: 1-10</p>
+    <button onclick="sc()"> Click here ! </button>
+</body>
+</html>

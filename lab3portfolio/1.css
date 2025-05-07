@@ -1,0 +1,30 @@
+
+*{
+    margin: 0;
+    padding: 0%;
+}
+
+.head-img{
+    width: 100%;
+    height: 10vh;
+    background: url('https://media.licdn.com/dms/image/v2/D5616AQGqQLdXNQbBBA/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1714492431228?e=1748476800&v=beta&t=xd_JwwwTsMmfzo9hSgYVl6Md8Zc7btrMyPKokERLQFY') ;
+    background-size: cover;
+}
+
+#header{
+    padding-bottom: 10px;
+    background-color: #eeeeeeb6;
+}
+#header{
+
+    background-color: #eeeeeeb6;
+}
+
+#main{
+    height: 60vh;
+}
+
+#footer{
+    height: 20vh;
+    background-color: #eeeeeeb6;
+}
