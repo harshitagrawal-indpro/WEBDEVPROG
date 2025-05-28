@@ -38,7 +38,7 @@ fs.writeFile('newfile.txt','this is me harshit',(err)=>{
 
 // append to a file
 
-fs.appendFIle('newfile.txt',"this is me harshit the new one ", (err,data)=>{
+fs.appendFile('newfile.txt',"this is me harshit the new one ", (err,data)=>{
     if (err){
         console.log(err);
         return;
@@ -46,7 +46,18 @@ fs.appendFIle('newfile.txt',"this is me harshit the new one ", (err,data)=>{
     else {
         console.log(data);
         fs.readFile('newfile.txt',"utf-8",(err)=>{
-            
+            if (err){
+                console.log(err);
+                return;
+            }
+            fs.readFile("newfile.txt","utf-8",(err,data)=>{
+                if(err){
+                    cosnole.log(err);
+                    return;
+
+                }
+                console.log(data)
+            })
         })
     }
 })
