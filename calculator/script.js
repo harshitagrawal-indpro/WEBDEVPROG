@@ -23,18 +23,20 @@ let operatorz = (symbol) => {
     }
 };
 
-let clear = ()=>{
-    result.textContent = '';
-    prevresult.textContent = '';
-    operator.textContent = '';
+let clear1 = ()=>{
+    console.log("clear");
     firstVal = '';
     op = '';
+    result.textContent = '0';
+    prevresult.textContent = '--';
+    operator.textContent = '--';
+    
 }
 
 let calculate= () =>{
     result.textContent = eval(firstVal + op + result.textContent);
-    prevresult.textContent = '';
+    prevresult.textContent = '--';
     firstVal ='';
-    operator.textContent = '';
+    operator.textContent = '--';
     op = '';
 }
