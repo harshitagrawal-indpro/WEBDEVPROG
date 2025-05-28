@@ -14,3 +14,13 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
 });
 
 
+
+// creating and writing to a new file 
+fs.writeFIle('newfile.txt','utf-8',(err,data)=>{
+    if (err){
+        console.log(err);
+        return;
+    }else{
+        console.log(data);  
+    }
+})
