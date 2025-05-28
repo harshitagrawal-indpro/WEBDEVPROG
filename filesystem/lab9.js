@@ -34,3 +34,19 @@ fs.writeFile('newfile.txt','this is me harshit',(err)=>{
         }
     })
 })
+
+
+// append to a file
+
+fs.appendFIle('newfile.txt',"this is me harshit the new one ", (err,data)=>{
+    if (err){
+        console.log(err);
+        return;
+    }
+    else {
+        console.log(data);
+        fs.readFile('newfile.txt',"utf-8",(err)=>{
+            
+        })
+    }
+})
