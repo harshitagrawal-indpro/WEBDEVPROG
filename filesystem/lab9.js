@@ -16,11 +16,21 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
 
 
 // creating and writing to a new file 
-fs.writeFile('newfile.txt','utf-8',(err,data)=>{
+fs.writeFile('newfile.txt','this is me harshit',(err)=>{
     if (err){
         console.log(err);
         return;
     }else{
-        console.log(data);  
+        console.log("file created");
+        console.log("reading the file !");
     }
+    fs.readFile('newfile.txt','utf-8',(err,data)=>{
+        if(err){
+            console.log(err);
+            return;
+        }
+        else {
+            console.log(data);
+        }
+    })
 })
